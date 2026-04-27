@@ -1,5 +1,6 @@
 package q01_basic.question01;
 
+//
 /**
  * Member 会員クラス
  */
