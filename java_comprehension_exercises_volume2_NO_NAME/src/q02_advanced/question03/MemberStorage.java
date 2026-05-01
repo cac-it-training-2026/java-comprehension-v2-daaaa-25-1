@@ -3,9 +3,9 @@ package q02_advanced.question03;
 import java.util.ArrayList;
 import java.util.List;
 
-class MemberStorage {
+public class MemberStorage {
 
-	private List<Member> members;
+	public List<Member> members;
 
 	/**
 	 * @param members
