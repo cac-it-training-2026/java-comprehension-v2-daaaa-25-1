@@ -1,12 +1,14 @@
-package q01_basic.question04;
+package q02_advanced.question01;
 
-class Member {
-	//TODO ここから実装する
+import java.util.List;
+
+public class Member {
 	private int id;
 	private String password;
 	private String name;
 	private int age;
 	private int rank;
+	private List<Coupon> coupons;
 
 	/**
 	 * @return id
@@ -79,6 +81,20 @@ class Member {
 	}
 
 	/**
+	 * @return coupons
+	 */
+	public List<Coupon> getCoupons() {
+		return coupons;
+	}
+
+	/**
+	 * @param coupons セットする coupons
+	 */
+	public void setCoupons(List<Coupon> coupons) {
+		this.coupons = coupons;
+	}
+
+	/**
 	 * 
 	 */
 	public Member() {
@@ -90,6 +106,7 @@ class Member {
 	 * @param name
 	 * @param age
 	 * @param rank
+	 * @param coupons
 	 */
 	public Member(int id, String password, String name, int age, int rank) {
 		this.id = id;
@@ -97,16 +114,39 @@ class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
+
+		this.coupons = new java.util.ArrayList<>();
+
+		Coupon coupon1 = new Coupon(1, 0.5, "最初の特典");
+		Coupon coupon2 = new Coupon(2, 0.25, "今月の特典");
+
+		this.coupons.add(coupon1);
+		this.coupons.add(coupon2);
+	}
+
+	public Member(int id, String password, String name, int age, int rank, List<Coupon> coupons) {
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.age = age;
+		this.rank = rank;
+		this.coupons = coupons;
+	}
+
+	@Override
+	public String toString() {
+		return "Member [id=" + this.id
+				+ ", password=" + this.password
+				+ ", name=" + this.name
+				+ ", age=" + this.age
+				+ ", rank=" + this.rank
+				+ ", coupons=" + this.coupons + "]";
 	}
 
 	public void showMember() {
-		System.out.println("---SHOW ALL MEMBERS---");
-		System.out.println("***MEMBER DATA***");
-		System.out.println("id:" + id);
-		System.out.println("password:" + password);
-		System.out.println("name:" + name);
-		System.out.println("age:" + age);
-		System.out.println("rank" + rank);
-		System.out.println("*****************");
+		System.out.println(toString());
+		System.out.println("******************");
+
 	}
+
 }

@@ -1,7 +1,6 @@
-package q01_basic.question04;
+package q01_basic.question06;
 
-class Member {
-	//TODO ここから実装する
+public class Member extends AbstMember {
 	private int id;
 	private String password;
 	private String name;
@@ -30,24 +29,24 @@ class Member {
 	}
 
 	/**
-	 * @param password セットする password
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	/**
-	 * @return name
+	 * @return nameString
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * @param name セットする name
+	 * @param nameString セットする nameString
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @param password セットする password
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	/**
@@ -87,7 +86,20 @@ class Member {
 	/**
 	 * @param id
 	 * @param password
-	 * @param name
+	 * @param age
+	 * @param rank
+	 */
+
+	@Override
+	public void buyItem() {
+		//後で何をひょうじするか
+
+	}
+
+	/**
+	 * @param id
+	 * @param password
+	 * @param nameString
 	 * @param age
 	 * @param rank
 	 */
@@ -99,14 +111,15 @@ class Member {
 		this.rank = rank;
 	}
 
+	@Override
 	public void showMember() {
-		System.out.println("---SHOW ALL MEMBERS---");
+		System.out.println("---SHOW MEMBER---");
 		System.out.println("***MEMBER DATA***");
-		System.out.println("id:" + id);
-		System.out.println("password:" + password);
-		System.out.println("name:" + name);
-		System.out.println("age:" + age);
-		System.out.println("rank" + rank);
+		System.out.println("id:" + this.id);
+		System.out.println("password:" + this.password);
+		System.out.println("name:" + this.name);
+		System.out.println("age:" + this.age);
+		System.out.println("rank:" + this.rank);
 		System.out.println("*****************");
 	}
 }
